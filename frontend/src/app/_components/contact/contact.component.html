@@ -1,0 +1,33 @@
+<div class="text-center">
+  <h2>Contact Us</h2>
+  <hr> <br>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-centered">
+      <form name="contactForm" #f="ngForm" (ngSubmit)="addContact(f)">
+        <div class="alert alert-danger" id="contactAlert" style="display: none;">
+		    </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="John Doe" name="name" [(ngModel)]="contact.name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="johndoe@mail.com" name="email" [(ngModel)]="contact.email">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+					<textarea class="form-control" rows="5" id="message" placeholder="Message" name="message" [(ngModel)]="contact.message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+      <hr>
+
+      <h2>Follow Us</h2>
+			<a href="http://facebook.com" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-facebook"></i></a>
+			<a href="http://twitter.com" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-twitter"> </i></a>
+			<a href="http://instagram.com" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-instagram"></i></a>
+			<a href="http://youtube.com" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-youtube"></i></a>
+
+    </div>
+  </div>
+</div>

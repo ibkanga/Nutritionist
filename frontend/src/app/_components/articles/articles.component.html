@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	  <nav>
+	    <ul class="nav nav-tabs">
+	      <li class="nav-item">
+	        <a class="nav-link active text-success" href="#articles" data-toggle="tab">All Articles</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#addArticles" data-toggle="tab">Add Articles</a>
+	      </li>
+	    </ul>
+	  </nav>
+
+    <div id="myTabContent" class="tab-content">
+	    <div class="tab-pane active" id="articles">
+        <div class="text-center">
+        <br>
+        <h2>Articles</h2>
+        <br>
+				<h3>
+				<table class="table-stripped table">
+				  <thead>
+					  <tr>
+					  <th>ID</th>
+					  <th>Headline</th>
+					  <th>Date</th>
+					  <th></th>
+					  <th></th>
+					  <th></th>
+					  </tr>
+				  </thead>
+				  <tbody>
+						<tr *ngFor="let article of articles">
+							<td>{{article.id}}</td>
+							<td>{{article.headline}}</td>
+							<td>{{article.publishedon}}</td>
+							<td>
+							  <button class="btn btn-dark" [routerLink]="['/article', article.id]">View</button>
+							</td>
+							<td>
+							  <button class="btn btn-success" [routerLink]="['/update', article.id]">Update</button>
+							</td>
+							<td>
+							  <button class="btn btn-danger" (click)="deleteArticle(article.id)">Delete</button>
+							</td>
+						</tr>
+				  </tbody>
+				</table>
+				</h3>
+		  	</div>
+      </div>
+
+			<div class="tab-pane" id="addArticles">
+	    <br>
+				<form name="theForm" #f="ngForm" (submit)="addArticle(f)">
+				<br>
+        <div class="alert alert-danger" id="articleAlert" style="display: none;">
+		    </div>
+					<div class="form-group">
+					<h4 class="text-black p-1">Article headline: </h4>
+						<div class="p-1">
+							<input type="text" class="form-control" name="headline" [(ngModel)]="article.headline">
+		        </div>
+					</div>
+					<div class="form-group">
+					<h4 class="text-black p-1">Photo URL:</h4>
+						<div class="p-1">
+							<input type="text" class="form-control" name="photourl" [(ngModel)]="article.photourl">
+						</div>
+					</div>
+					<div class="form-group">
+					<h4 class="text-black p-1">Text:</h4>
+						<div class="p-1">
+							<textarea rows="5" class="form-control" name="text" [(ngModel)]="article.text"></textarea>
+						</div>
+					</div>
+					<div class="p-1">
+						<button class="btn btn-primary">Add</button>
+					</div>
+				</form>
+			</div>
+	  </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <nav>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active text-success" href="#login" data-toggle="tab">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#signUp" data-toggle="tab">SignUp</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="tab-content">
+
+      <div class="tab-pane active" id="login">
+        <form name="loginForm" #l="ngForm" (ngSubmit)="onLogin(l)">
+          <br>
+          <div class="alert alert-danger" id="logAlert" style="display: none;">
+		      </div>
+					<h4 class="text-white p-1">Username</h4>
+          <div class="form-group p-1">
+            <input type="text" class="form-control" id="usernamelogin" name="usernamelogin" [(ngModel)]="userLogin.username" required>
+          </div>
+          <h4 class="text-white p-1">Password</h4>
+          <div class="form-group p-1">
+            <input type="password" class="form-control" id="passwordlogin" name="passwordlogin" [(ngModel)]="userLogin.password" required>
+          </div>
+          <br>
+          <div class="p-1">
+            <button class="btn btn-success" type="submit" name="submit">Login</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="tab-pane fade" id="signUp">
+        <form name="registerForm" #f="ngForm" (ngSubmit)="onRegister(f)">
+          <br>
+			  	<div class="alert alert-danger" id="regAlert" style="display: none;">
+			    </div>
+          <div class="text-light">
+            <h6 class="p-1 ">First Name</h6>
+            <div class="p-1 form-group">
+              <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="userRegister.firstName" required>
+            </div>
+            <h6 class="p-1 ">Last Name</h6>
+            <div class="p-1 form-group">
+              <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="userRegister.lastName" required>
+            </div>
+            <h6 class="p-1 ">E-mail address</h6>
+            <div class="p-1 form-group">
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="userRegister.email" required>
+            </div>
+            <h6 class="p-1 ">Username</h6>
+            <div class="p-1 form-group">
+              <input type="text" class="form-control" id="username" name="username" [(ngModel)]="userRegister.username" required>
+            </div>
+            <h6 class="p-1 ">Password</h6>
+            <div class="p-1 form-group">
+              <input type="password" class="form-control" id="password" name="password" [(ngModel)]="userRegister.password" required>
+            </div>
+          </div>
+          <br>
+          <div class="p-1">
+            <button class="btn btn-primary" type="submit" name="submit">Create Account</button>
+					</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<br/>
+<div class="header clearfix">
+  <nav>
+    <ul class="nav nav-pills float-right">
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink='/'>Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-danger" routerLink='/blog'>Blog</a>
+      </li>
+      <li class="nav-item" *ngIf="loggedIn">
+        <a class="nav-link text-secondary" routerLink='/articles'>Articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-primary" routerLink='/contact'>Contact</a>
+      </li>
+      <li class="nav-item" *ngIf="!loggedIn">
+        <a class="nav-link text-success" routerLink='/login'>Login</a>
+      </li>
+      <li class="nav-item" *ngIf="loggedIn">
+        <a (click)="onLogout()" class="nav-link text-success" routerLink="/">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<br/>
